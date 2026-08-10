@@ -408,7 +408,32 @@
     "moveBlockDown": "Move {name} down",
     "afterBlocks": "After main prompt",
     "hint": "Ctrl + Enter to generate",
-    "dropHere": "Drop to attach as reference (up to {max})"
+    "dropHere": "Drop to attach as reference (up to {max})",
+    "localFolder": {
+      "ariaLabel": "Local folder reference picker",
+      "title": "Local reference folder",
+      "description": "Keep a folder of images ready to attach",
+      "choose": "Choose folder",
+      "switch": "Switch",
+      "refresh": "Rescan",
+      "reauthorize": "Authorize",
+      "clear": "Clear",
+      "count": "{count} images in this folder",
+      "empty": "No PNG, JPEG, or WebP images were found in this folder.",
+      "selected": "Selected {count}/{max}",
+      "send": "Send to References",
+      "added": "Added {count} images to References.",
+      "limit": "You can select up to {max} more images for the current provider.",
+      "unsupported": "Persistent local folders require Chrome or Edge.",
+      "permissionRequired": "Authorize access to {name} to restore its thumbnails.",
+      "permissionDenied": "Folder access was not granted.",
+      "unavailable": "{count} images could not be previewed and were skipped.",
+      "chooseFailed": "Could not select that folder.",
+      "scanFailed": "Could not scan that folder.",
+      "restoreFailed": "Could not restore the saved folder.",
+      "clearFailed": "Could not clear the saved folder.",
+      "addFailed": "Could not add the selected images to References."
+    }
   },
   "canvas": {
     "modeTitle": "Canvas Mode",

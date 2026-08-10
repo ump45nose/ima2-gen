@@ -9,6 +9,7 @@ import { Chip, ChipRow } from "./controls";
 import { ElementMentionMenu } from "./ElementMentionMenu";
 import type { ElementMentionKind } from "./ElementMentionChip";
 import { ReferenceTray } from "./composer/ReferenceTray";
+import { LocalFolderReferencePicker } from "./composer/LocalFolderReferencePicker";
 import { ElementMentionChips } from "./composer/ElementMentionChips";
 import { DeadTagMirror } from "./composer/DeadTagMirror";
 import { PromptComposerToolbar } from "./composer/PromptComposerToolbar";
@@ -18,6 +19,7 @@ import type { AssetItem } from "../store/storeTypes";
 import { addTrayElementImpl, syncElementCatalogImpl } from "../store/storeReferenceImpl";
 import { findElementTrayItem } from "../lib/elementCatalog";
 import type { TrayItem } from "../lib/referenceTray";
+import { localFolderSelectionLimit } from "../lib/localFolderReferences";
 type PromptComposerProps = { variant?: "sidebar" | "bottom" };
 type ElementSelectionState = {
   addElementId?: (id: string) => void; removeElementId?: (id: string) => void;
@@ -336,6 +338,11 @@ export function PromptComposer({ variant = "sidebar" }: PromptComposerProps) {
         limit={maxRefs}
         onRemove={removeTrayItem}
         onAdd={openFilePicker}
+      />
+
+      <LocalFolderReferencePicker
+        maxSelection={localFolderSelectionLimit(maxRefs, trayItems.length)}
+        onSubmit={(files) => addFilesAtCaret(files, captureAttachmentCaret(), false)}
       />
 
       {beforePrompts.length > 0 && (

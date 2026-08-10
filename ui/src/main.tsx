@@ -6,6 +6,7 @@ import "./styles/canvas-annotations.css";
 import "./styles/canvas-background-cleanup.css";
 import "./styles/classic-workspace.css";
 import "./styles/composer-flow.css";
+import "./styles/local-folder-picker.css";
 import "./styles/gallery-controls.css";
 import "./styles/prompt-builder.css";
 import "./styles/prompt-builder-messages.css";

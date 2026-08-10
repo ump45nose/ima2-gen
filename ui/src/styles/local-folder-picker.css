@@ -1,0 +1,197 @@
+.local-folder-picker,
+.local-folder-picker__unsupported {
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--surface-2) 72%, transparent);
+}
+
+.local-folder-picker {
+  display: grid;
+  gap: 8px;
+  padding: 8px;
+}
+
+.local-folder-picker__unsupported {
+  padding: 8px 10px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.local-folder-picker__header,
+.local-folder-picker__footer {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.local-folder-picker__title {
+  display: grid;
+  min-width: 0;
+  gap: 1px;
+}
+
+.local-folder-picker__title strong,
+.local-folder-picker__title span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.local-folder-picker__title strong {
+  color: var(--text);
+  font-size: 11px;
+}
+
+.local-folder-picker__title span,
+.local-folder-picker__footer,
+.local-folder-picker__status {
+  color: var(--text-muted);
+  font-size: 10px;
+}
+
+.local-folder-picker__actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 4px;
+}
+
+.local-folder-picker__actions button,
+.local-folder-picker__footer button {
+  min-height: 26px;
+  padding: 4px 7px;
+  border: 1px solid var(--border-strong);
+  border-radius: 7px;
+  background: var(--control-bg);
+  color: var(--text-dim);
+  cursor: pointer;
+  font: 600 10px/1 var(--font);
+}
+
+.local-folder-picker__actions button:hover:not(:disabled),
+.local-folder-picker__actions button:focus-visible,
+.local-folder-picker__footer button:hover:not(:disabled),
+.local-folder-picker__footer button:focus-visible {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.local-folder-picker__actions button:disabled,
+.local-folder-picker__footer button:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.local-folder-picker__scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+
+.local-folder-picker__virtual {
+  position: relative;
+  height: 80px;
+}
+
+.local-folder-picker__item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  width: 78px;
+  height: 76px;
+  grid-template-rows: 56px 16px;
+  gap: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 2px;
+}
+
+.local-folder-picker__item:hover:not(:disabled) {
+  border-color: var(--border-strong);
+}
+
+.local-folder-picker__item.is-selected {
+  border-color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+.local-folder-picker__item.is-failed {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.local-folder-picker__item img,
+.local-folder-picker__broken {
+  display: grid;
+  width: 100%;
+  height: 56px;
+  place-items: center;
+  border-radius: 5px;
+  background: var(--surface-3);
+  object-fit: cover;
+}
+
+.local-folder-picker__broken {
+  color: var(--red);
+  font-family: var(--mono);
+  font-weight: 700;
+}
+
+.local-folder-picker__check {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  background: var(--chip-scrim);
+  color: #fff;
+  font: 700 10px/1 var(--mono);
+}
+
+.local-folder-picker__item.is-selected .local-folder-picker__check {
+  border-color: var(--blue);
+  background: var(--blue);
+}
+
+.local-folder-picker__name {
+  overflow: hidden;
+  font: 10px/16px var(--font);
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.local-folder-picker__status {
+  line-height: 1.35;
+}
+
+.local-folder-picker__footer button {
+  border-color: var(--blue);
+  background: color-mix(in srgb, var(--blue) 18%, transparent);
+  color: var(--text);
+}
+
+@media (max-width: 680px) {
+  .local-folder-picker__header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .local-folder-picker__actions {
+    width: 100%;
+    overflow-x: auto;
+  }
+}
